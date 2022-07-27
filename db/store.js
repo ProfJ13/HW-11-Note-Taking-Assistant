@@ -27,7 +27,9 @@ class Store {
         }
 
         const newNote = { title, text, id: uuidv1() };
-        console.log(this.getNotes());
+        this.getNotes().then((notes) => {
+            notes.push(newNote);
+        });
     }
 }
 
